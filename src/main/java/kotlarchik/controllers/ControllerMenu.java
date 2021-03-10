@@ -3,9 +3,12 @@ package kotlarchik.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -14,11 +17,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import kotlarchik.dao.DAO;
 import kotlarchik.model.EntityProduct;
 import kotlarchik.service.ServiceProduct;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+
+import java.io.IOException;
 
 public class ControllerMenu {
     private final SessionFactory factory;
@@ -78,12 +84,39 @@ public class ControllerMenu {
             AnchorPane anchorPane = new AnchorPane();
             anchorPane.setMaxWidth(200);
             anchorPane.prefHeight(390);
+            anchorPane.setOnMouseEntered(mouseEvent -> {
+                anchorPane.setPrefWidth(220);
+                anchorPane.setPrefHeight(410);
+            });
+
+            // action to click mouse
+            anchorPane.setOnMouseClicked(mouseEvent -> {
+                try {
+                    Parent root = FXMLLoader.load(getClass().getResource("/view/showInfo.fxml"));
+                    Stage stage = new Stage();
+                    stage.setTitle("Подробная информация");
+                    stage.setScene(new Scene(root));
+                    stage.getIcons().add(new Image(getClass().getResourceAsStream("/icon/school.png")));
+                    stage.showAndWait();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
 
             // image
             ImageView imageView = new ImageView();
             imageView.setImage(new Image(entityProduct.getMainImagePath()));
             imageView.setFitWidth(200);
             imageView.setFitHeight(300);
+
+            // on hover
+            imageView.setOnMouseEntered(mouseEvent -> {
+
+            });
+            // when the hover is removed
+            imageView.setOnMouseExited(mouseEvent -> {
+
+            });
 
             // labels to information image
             // name
