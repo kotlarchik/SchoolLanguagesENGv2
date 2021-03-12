@@ -74,7 +74,6 @@ public class ControllerMainMenu implements Initializable {
                     list.add(entityProduct);
                 }
             }
-
         });
     }
 
