@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="360.0" prefWidth="200.0" style="-fx-background-color: #d4d4d4; -fx-background-radius: 10; -fx-border-color: #f8adff; -fx-border-radius: 15;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kotlarchik.controllers.ControllerTile">
+   <children>
+      <ImageView fx:id="imageView" fitHeight="228.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="10.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin></ImageView>
+      <Label fx:id="labelTitle" alignment="CENTER" contentDisplay="CENTER" layoutY="263.0" text="Название" textAlignment="CENTER" wrapText="true">
+         <VBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </VBox.margin></Label>
+      <Label fx:id="labelCost" alignment="CENTER" contentDisplay="CENTER" layoutY="305.0" text="Цена" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets bottom="10.0" top="20.0" />
+         </VBox.margin></Label>
+      <Label fx:id="labelActive" alignment="CENTER" contentDisplay="CENTER" layoutY="334.0" text="Активность" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin></Label>
+   </children>
+</VBox>
