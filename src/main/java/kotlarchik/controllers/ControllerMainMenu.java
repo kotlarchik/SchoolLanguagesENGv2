@@ -69,13 +69,12 @@ public class ControllerMainMenu implements Initializable {
     private void search(){
         txtSearch.setOnKeyReleased(event -> {
             ObservableList<EntityProduct> list = FXCollections.observableArrayList();
-
             for (EntityProduct entityProduct: list){
                 if (entityProduct.getTitle().toLowerCase().contains(txtSearch.getText().toLowerCase())){
                     list.add(entityProduct);
                 }
             }
-            products.addAll(list);
+
         });
     }
 

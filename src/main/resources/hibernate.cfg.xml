@@ -14,5 +14,6 @@
         <mapping class="kotlarchik.model.EntityManufact"/>
         <mapping class="kotlarchik.model.EntityProduct"/>
         <mapping class="kotlarchik.model.EntityProductSale"/>
+        <mapping class="kotlarchik.model.Users"/>
     </session-factory>
 </hibernate-configuration>
